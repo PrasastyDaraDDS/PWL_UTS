@@ -15,11 +15,11 @@ class RotiController extends Controller
     public function index()
     {
         //
-        $roti = Roti::latest();
         if (request("search")) {
-            $roti->where('nama','like','%'. request('search').'%');
+            $roti = Roti::where('nama','like','%'. request('search').'%')->paginate(5);
+        }else{
+            $roti = Roti::paginate(3);
         }
-        $roti = $roti->paginate(5);
         return view('roti.roti')
             ->with('roti',$roti);
         

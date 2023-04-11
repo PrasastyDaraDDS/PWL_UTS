@@ -74,14 +74,14 @@
                         </div>
                         <div class="col form-group">
                             <label>Kadalursa</label>
-                            <input class="form-control @error('kadalursa') is-invalid @enderror"
-                                value="{{ isset($roti) ? $roti->kadalursa : old('m') }}" name="kadalursa" type="date" />
-                            @error('kadalursa')
+                            <input class="form-control @error('kadaluarsa') is-invalid @enderror"
+                                value="{{ isset($roti) ? $roti->kadalursa : old('kadaluarsa') }}" name="kadaluarsa" type="date" />
+                            @error('kadaluarsa')
                                 <span class="error invalid-feedback">{{ $message }} </span>
                             @enderror
                         </div>
                         <div class="col form-group">
-                            <label>Berat</label>
+                            <label>Berat(g)</label>
                             <input class="form-control @error('berat') is-invalid @enderror"
                                 value="{{ isset($roti) ? $roti->berat : old('berat') }}" name="berat"
                                 type="text" />

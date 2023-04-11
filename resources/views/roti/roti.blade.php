@@ -27,12 +27,6 @@
 
         <!-- Main content -->
         <section class="content">
-
-            @if (session()->has('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
             <!-- Default box -->
             <div class="card card-warning">
                 <div class="card-header">
@@ -48,19 +42,23 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
+                    
                         <a href="{{ url('roti/create') }}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-                        <form action="/roti" class="col-md-4" style="padding: 0">
-                            @csrf
-                            <div class="input-group input-group-sm ">
-                                <input type="text" name="search" class="form-control input-sm " placeholder="Cari Roti">
-                                <button class="input-group-text input-sm" id="basic-addon2" type="submit">
-                                    <i class="fa fa-search" style="font-size:16px"></i>
-                                </button>
-                            </div>
-                        </form>
-                        <div class=""></div>
-                    </div>
+                        <div class="d-flex row" style="width: 100%;justify-content: space-between;align-items: center;">
+                            <form action="/roti" class="col-md-4" style="padding: 0">
+                                @csrf
+                                <div class="input-group input-group-sm ">
+                                    <input type="text" name="search" class="form-control input-sm " placeholder="Cari Mobil">
+                                    <button class="input-group-text input-sm" id="basic-addon2" type="submit">
+                                        <i class="fa fa-search" style="font-size:16px"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <a href="/logout" class="btn btn-danger">
+                            Logout</a>
+                        </div>
+                        <div class="mb-3"></div>
+                    
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -69,7 +67,7 @@
                                 <th>Merk</th>
                                 <th>Rasa</th>
                                 <th>Kadaluarsa</th>
-                                <th>Berat</th>
+                                <th>Berat(g)</th>
                                 <th>Harga</th>
                                 <th>Kuantitas</th>
                                 <th>Action</th>
@@ -84,7 +82,7 @@
                                         <td>{{ $r->merk }}</td>
                                         <td>{{ $r->rasa }}</td>
                                         <td>{{ $r->kadaluarsa }}</td>
-                                        <td>{{ $r->berat }} mg</td>
+                                        <td>{{ $r->berat }} g</td>
                                         <td>{{ $r->harga }}</td>
                                         <td>{{ $r->qty }}</td>
                                         <td>
@@ -105,7 +103,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="7" class="text-center">Data tidak ada</td>
+                                    <td colspan="9" class="text-center">Data tidak ada</td>
                                 </tr>
                             @endif
                         </tbody>

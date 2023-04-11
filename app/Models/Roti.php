@@ -10,4 +10,14 @@ class Roti extends Model
     use HasFactory;
 
     protected $table = "roti";
+
+    protected $fillable = [
+        "nama",
+        "merk",
+        "rasa",
+        "kadaluarsa",
+        "berat",
+        "harga",
+        "qty"
+    ];
 }

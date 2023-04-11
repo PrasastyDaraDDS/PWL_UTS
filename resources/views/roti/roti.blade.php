@@ -48,7 +48,7 @@
                             <form action="/roti" class="col-md-4" style="padding: 0">
                                 @csrf
                                 <div class="input-group input-group-sm ">
-                                    <input type="text" name="search" class="form-control input-sm " placeholder="Cari Mobil">
+                                    <input type="text" name="search" class="form-control input-sm " placeholder="Cari Roti">
                                     <button class="input-group-text input-sm" id="basic-addon2" type="submit">
                                         <i class="fa fa-search" style="font-size:16px"></i>
                                     </button>
